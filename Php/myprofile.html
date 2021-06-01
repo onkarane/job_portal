@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <!--Title of the page-->
+        <title>My profile</title>
+        <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+
+        <!--Load stylesheets-->
+        <link rel="stylesheet" href="css/myprofile.css">
+
+        <!--Bootstrap-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" data-auto-a11y="true"></script>
+
+        <!--Button Script-->
+        <script>
+            function enableSubmit() {
+                document.getElementById("submit").disabled = false;
+            };
+        </script>
+    </head>
+
+    <body>
+        <!--Nav Bar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <a class="navbar-brand" href="#">Job Search Portal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="search.html">Search</a>
+                <a class="nav-item nav-link active" href="myprofile.html">My Profile</a>
+                <a class="nav-item nav-link" href="applied.html">Job Applications</a>
+                <a class="nav-item nav-link" href="login.html">Logout</a>
+              </div>
+            </div>
+          </nav>
+        <!--End of Nav Bar-->
+
+        <!--User Form-->
+        <div class="card">
+            <!--Login Form-->
+            <h5 class="card-title">User Details</h5>
+            <div class="card-body">
+                <form action="/login.php">
+                    <!--Names-->
+                    <div class="form-group form-inline">
+                        <label for="fname">FIRST NAME</label>
+                        <input id = "input" class="form-control" type="text" id="firstName" 
+                        name="fname" size = "13" placeholder="Michael" required readonly="true" style="margin-left: 20px; margin-right: 20px;">
+                        <label for="fname">LAST NAME</label>
+                        <input id = "input" class="form-control" type="text" id="lname" 
+                        name="lname" size ="13" placeholder="Scott" required readonly style="margin-left: 20px; margin-right: 20px;">
+                    </div>
+                    <!--DOB & Education-->
+                    <div class="form-group form-inline">
+                        <label for="fname">DATE OF BIRTH</label>
+                        <input class="form-control" type="date" id = "dob" 
+                        name ="dob" size = "10" placeholder="2011-08-19" readonly style="margin-left: 20px; margin-right: 20px;">
+                        <div class="form-group">
+                            <label for="education">EDUCATION</label>
+                            <select class="form-control" name = "edu" required readonly style="margin-left: 20px; margin-right: 20px;">
+                              <option value="high school">High School</option>
+                              <option value="bachelors">Bachelors</option>
+                              <option value="masters">Masters</option>
+                              <option value="phd">Ph.D</option>
+                              <option value="associate">Associate</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--Address-->
+                    <label for="address">ADDRESS</label>
+                    <div class="form-group form-inline">
+                        <input id = "input" class="form-control" type="text" id="st-adr" 
+                        name="st-adr" placeholder="St. Address" required readonly style="margin-right: 40px;">
+                        <input id = "input" class="form-control" type="text" id="city" name="city" placeholder="City" required readonly>
+                    </div>
+                    <div class="form-group form-inline">
+                        <input id = "input" class="form-control" type="text" id="state" 
+                        name="state" placeholder="State Initial Ex: CO" maxlength="2" required  readonly style="margin-right: 40px;">
+                        <input id = "input" class="form-control" type="number" id="zip" name="zip" placeholder="Zipcode" maxlength="5" readonly required>
+                    </div>
+                    
+                    <!--Email Address & Password-->
+                    <div class="form-group form-inline">
+                        <label for="email">EMAIL</label><br>
+                        <input id = "input" class="form-control" type="email" id="email" 
+                        name="email" size = "24" placeholder="michael@dundermifflin.com" readonly required style="margin-left: 20px;"><br>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label for="password">PASSWORD</label><br>
+                        <input id = "input" class="form-control" type="password" id="pass" 
+                        name="pass" required readonly style="margin-left: 20px;"><br><br>
+                    </div>
+                    <!--Submit-->
+                    <input id = "submit" class="btn btn-primary" type="submit" value="Submit" disabled>
+                    <input id = "edit" class="btn btn-primary" type="button" onclick="enableSubmit();" value="Edit">
+                </form>
+            </div>
+        </div>
+        <!--Script to remove read only attribute-->
+        <script>
+            $('#edit').click(function (){
+            $('input[type=text]').removeAttr('readonly');
+            $('input[type=date]').removeAttr('readonly');
+            $('input[type=number]').removeAttr('readonly');
+            $('input[type=email]').removeAttr('readonly');
+            $('input[type=password]').removeAttr('readonly');
+            });
+        </script>
+    </body>
+    
+</html>

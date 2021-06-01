@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <!--Title of the page-->
+        <title>Register</title>
+        <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+
+        <!--Load stylesheets-->
+        <link rel="stylesheet" href="css/register.css">
+
+        <!--Bootstrap-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <!--Login Form-->
+                    <h5 class="card-title">User Registration</h5>
+                    <div class="card-body">
+                        <form action="/login.php">
+                            <!--Names-->
+                            <div class="form-group form-inline">
+                                <label for="fname">FIRST NAME</label>
+                                <input id = "input" class="form-control" type="text" id="fname" 
+                                name="fname" size = "13" placeholder="Michael" required style="margin-left: 20px; margin-right: 20px;">
+                                <label for="fname">LAST NAME</label>
+                                <input id = "input" class="form-control" type="text" id="lname" 
+                                name="lname" size ="13" placeholder="Scott" required style="margin-left: 20px; margin-right: 20px;">
+                            </div>
+                            <!--DOB & Education-->
+                            <div class="form-group form-inline">
+                                <label for="fname">DATE OF BIRTH</label>
+                                <input class="form-control" type="date" id = "dob" 
+                                name ="dob" size = "10" placeholder="2011-08-19" style="margin-left: 20px; margin-right: 20px;">
+                                <div class="form-group">
+                                    <label for="education">EDUCATION</label>
+                                    <select class="form-control" name = "edu" required style="margin-left: 20px; margin-right: 20px;">
+                                      <option value="high school">High School</option>
+                                      <option value="bachelors">Bachelors</option>
+                                      <option value="masters">Masters</option>
+                                      <option value="phd">Ph.D</option>
+                                      <option value="associate">Associate</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--Address-->
+                            <label for="fname">ADDRESS</label>
+                            <div class="form-group form-inline">
+                                <input id = "input" class="form-control" type="text" id="st-adr" 
+                                name="st-adr" placeholder="St. Address" required style="margin-right: 40px;">
+                                <input id = "input" class="form-control" type="text" id="city" name="city" placeholder="City" required>
+                            </div>
+                            <div class="form-group form-inline">
+                                <input id = "input" class="form-control" type="text" id="state" 
+                                name="state" placeholder="State Initial Ex: CO" maxlength="2" required style="margin-right: 40px;">
+                                <input id = "input" class="form-control" type="number" id="zip" name="zip" placeholder="Zipcode" maxlength="5" required>
+                            </div>
+                            
+                            <!--Email Address & Password-->
+                            <div class="form-group form-inline">
+                                <label for="fname">EMAIL</label><br>
+                                <input id = "input" class="form-control" type="email" id="email" 
+                                name="email" size = "24" placeholder="michael@dundermifflin.com" required style="margin-left: 20px;"><br>
+                            </div>
+                            <div class="form-group form-inline">
+                                <label for="password">PASSWORD</label><br>
+                                <input id = "input" class="form-control" type="password" id="pass" 
+                                name="pass" required style="margin-left: 20px;"><br><br>
+                            </div>
+                            <!--Submit-->
+                            <input id = "register" class="btn btn-primary" type="submit" value="Register">
+                            <a id = "login" href="login.html" >Go to Login</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <img id = "register-img" src="css/images/register.png" class="img-fluid">
+            </div>
+        </div>
+    </body>
+</html>

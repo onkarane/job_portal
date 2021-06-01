@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <!--Title of the page-->
+        <title>Search Results</title>
+        <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+
+        <!--Load stylesheets-->
+        <link rel="stylesheet" href="css/jobs.css">
+
+        <!--Bootstrap-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" data-auto-a11y="true"
+    ></script>
+
+    <body>
+        <!--Nav Bar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <a class="navbar-brand" href="#">Job Posting Portal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link " href="bhome.html">Home</a>
+                <a class="nav-item nav-link active" href="jobs.html">Add Jobs</a>
+                <a class="nav-item nav-link" href="applicants.html">Job Applicants</a>
+                <a class="nav-item nav-link " href="blogin.html">Logout</a>
+              </div>
+            </div>
+          </nav>
+        <!--End of Nav Bar-->
+
+        <div class="card">
+            <!--Login Form-->
+            <h5 class="card-title">Job Post Form</h5>
+            <div class="card-body">
+                <form action="/login.php">
+                    <!--Names-->
+                    <div class="form-group form-inline">
+                        <label for="fname">JOB TITLE</label>
+                        <input id = "input" class="form-control" type="text" id="fname" 
+                        name="fname" size = "20" placeholder="Machine Learning" required style="margin-left: 20px; margin-right: 20px;">
+                    </div>
+                    <!--DOB & Education-->
+                    <div class="form-group form-inline">
+                        <div class="form-group">
+                            <label for="education">JOB CATEGORY</label>
+                            <select class="form-control" name = "edu" required style="margin-left: 20px; margin-right: 20px;">
+                              <option value="high school">Data Science</option>
+                              <option value="bachelors">Software Development</option>
+                              <option value="masters">Analytics</option>
+                              <option value="phd">Web Development</option>
+                            </select>
+                        </div>
+                        <label for="fname">LOCATION</label>
+                        <input id = "input" class="form-control" type="text" id="st-adr" 
+                        name="st-adr" placeholder="State" required style=" margin-left: 20px;">
+                    </div>
+                    <!--Address-->
+                    <div class="form-group form-inline">
+                        <label for="fname">DATE</label>
+                        <input id = "date" class="form-control" type="text" id="st-adr" 
+                        name="st-adr" placeholder="State" required style=" margin-left: 20px; margin-right: 20px;">
+                        <div class="form-group">
+                            <label for="education">JOB TYPE</label>
+                            <select class="form-control" name = "edu" required style="margin-left: 20px; margin-right: 20px;">
+                              <option value="high school">Full-time</option>
+                              <option value="bachelors">Part-time</option>
+                              <option value="masters">Internship</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label for="exampleFormControlTextarea1">SUMMARY</label>
+                        <textarea class="form-control" rows="3" style="margin-left: 20px;"></textarea>
+                    </div>
+                
+                    <!--Submit-->
+                    <input id = "register" class="btn btn-primary" type="submit" value="Post Job">
+                </form>
+            </div>
+        </div>
+        
+    </body>
+</html>

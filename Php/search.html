@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <!--Title of the page-->
+        <title>Search</title>
+        <meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+
+        <!--Load stylesheets-->
+        <link rel="stylesheet" href="css/jobsearch.css">
+
+        <!--Bootstrap-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" data-auto-a11y="true"
+    ></script>
+    </head>
+
+    <body>
+
+        <!--Nav Bar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <a class="navbar-brand" href="#">Job Search Portal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="search.html">Search</a>
+                <a class="nav-item nav-link" href="myprofile.html">My Profile</a>
+                <a class="nav-item nav-link" href="applied.html">Job Applications</a>
+                <a class="nav-item nav-link" href="login.html">Logout</a>
+              </div>
+            </div>
+          </nav>
+        <!--End of Nav Bar-->
+        <!--Search Bar-->
+        <div class="input-group">
+            <form>
+              <div class="form-inline">
+                <div class="form-group">
+                  <label for="education" style="color: white;">JOB CATEGORY</label>
+                  <select id = "select" class="form-control" name = "edu" required style="margin-left: 20px; margin-right: 20px;">
+                    <option value="high school">Data Science</option>
+                    <option value="bachelors">Software Development</option>
+                    <option value="masters">Analytics</option>
+                    <option value="phd">Web Development</option>
+                  </select>
+                </div>
+                  <p id = "or" >OR</p>
+                  <input id = "search" type="text" placeholder="Company name">
+              </div>
+              <button id="search-btn" type="submit" class="btn btn-outline-primary">
+                <div>
+                  Search
+                  <i id = "fa-icon" class="fas fa-search fa-lg"></i>
+                </div>
+                
+            </button>
+            </form>
+        </div>
+    </body>
+</html>

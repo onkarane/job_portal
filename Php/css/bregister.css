@@ -1,0 +1,29 @@
+body{
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+.card-title{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.card{
+    width: 40em;
+    margin-top: 120px;
+    margin-left: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#login{
+    margin-left: 13px;
+}
+
+#register-img{
+    height: 26em;
+    margin-left: 5em;
+    margin-top: 10em;
+}
+
+#register{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}

@@ -1,0 +1,16 @@
+body{
+    background-image: linear-gradient(to right top, #051937, #133861, #1d5b8e, #1f81bc, #12a9eb);
+    background-size: cover;
+}
+
+body > h1{
+    color: aliceblue;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.card{
+    width: 50em;
+    margin-left: 280px;
+    margin-top: 20px;
+}
