@@ -1,0 +1,105 @@
+﻿@model CIS655Project.Models.User
+
+@{
+    Layout = "~/Views/Shared/_LogReg.cshtml";
+    ViewData["Title"] = "URegister";
+}
+
+<h1 class="text-center">Register User</h1>
+
+@if (TempData["email"] != null)
+{
+    <div class="alert alert-danger">@TempData["email"]</div>
+}
+
+<hr />
+<div class="row">
+    <div class="col-md-8 card mx-auto" style="box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);">
+        <form asp-action="URegister" method="post" class="mx-auto">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-inline mt-3">
+                <div class="form-group">
+                    <label asp-for="Fname" class="control-label"></label>
+                    <input asp-for="Fname" class="form-control ml-4" required />
+                    <span asp-validation-for="Fname" class="text-danger"></span>
+                </div>
+                <div class="form-group ml-3">
+                    <label asp-for="Lname" class="control-label"></label>
+                    <input asp-for="Lname" class="form-control ml-4" required />
+                    <span asp-validation-for="Lname" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-inline mt-2">
+                <div class="form-group">
+                    <label asp-for="Street" class="control-label"></label>
+                    <input asp-for="Street" class="form-control" style="margin-left: 29.5px" required />
+                    <span asp-validation-for="Street" class="text-danger"></span>
+                </div>
+                <div class="form-group ml-3">
+                    <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" class="form-control ml-5" required />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group mt-2">
+                    <label asp-for="State" class="control-label "></label>
+                    <input asp-for="State" class="form-control" style="margin-left: 33.5px" required />
+                    <span asp-validation-for="State" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group mt-2">
+                    <label asp-for="ZipCode" class="control-label"></label>
+                    <input asp-for="ZipCode" class="form-control ml-2" min="10000" max="99999" style="width: 200px" required />
+                    <span asp-validation-for="ZipCode" class="text-danger"></span>
+                </div>
+                <div class="form-group ml-3">
+                    <label asp-for="Country" class="control-label"></label>
+                    <input asp-for="Country" class="form-control ml-4" required />
+                    <span asp-validation-for="Country" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group mt-2">
+                    <label asp-for="EdLevel" class="control-label">Education</label>
+                    <select asp-for="EdLevel" class="form-control ml-1" required>
+                        <option value="Masters">
+                            Masters
+                        </option>
+                        <option value="Bachelors">
+                            Bachelors
+                        </option>
+                        <option value="PhD">
+                            PhD
+                        </option>
+                        <option value="Associate">
+                            Associate
+                        </option>
+                    </select>
+                    <span asp-validation-for="EdLevel" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group mt-2">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" style="margin-left: 30px" required />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group ml-3">
+                    <label asp-for="Pwd" class="control-label">Password</label>
+                    <input type="password" asp-for="Pwd" class="form-control ml-3" required />
+                    <span asp-validation-for="Pwd" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group mt-3">
+                <div style="margin-left: 150px">
+                    <input type="submit" value="Create Account" class="btn btn-success" />
+                    <a asp-action="Login" class="ml-3 btn btn-outline-success text-dark">Back to Login</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

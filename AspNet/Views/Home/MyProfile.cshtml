@@ -1,0 +1,119 @@
+﻿@model CIS655Project.Models.User
+
+@{
+    ViewData["Title"] = "MyProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center">MyProfile</h1>
+
+@if (TempData["edit"] != null)
+{
+    <div class="alert alert-success">@TempData["edit"] </div>
+}
+@if (TempData["updateFail"] != null)
+{
+<div class="alert alert-danger">@TempData["updateFail"] </div>
+}
+
+<hr />
+<div class="row">
+    <div class="col-md-8 card mx-auto" style="box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);">
+        <form asp-action="Edit" method="post" class="mx-auto">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-inline mt-3">
+                <div class="form-group">
+                    <label asp-for="Fname" class="control-label"></label>
+                    <input asp-for="Fname" type="text" class="form-control ml-4" required readonly />
+                    <span asp-validation-for="Fname" class="text-danger"></span>
+                </div>
+                <div class="form-group ml-3">
+                    <label asp-for="Lname" class="control-label"></label>
+                    <input asp-for="Lname" type="text" class="form-control ml-4" required readonly />
+                    <span asp-validation-for="Lname" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-inline mt-2">
+                <div class="form-group">
+                    <label asp-for="Street" class="control-label"></label>
+                    <input asp-for="Street" type="text" class="form-control" style="margin-left: 29.5px" required readonly />
+                    <span asp-validation-for="Street" class="text-danger"></span>
+                </div>
+                <div class="form-group ml-3">
+                    <label asp-for="City" class="control-label"></label>
+                    <input asp-for="City" type="text" class="form-control ml-5" required readonly />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group mt-2">
+                    <label asp-for="State" class="control-label "></label>
+                    <input asp-for="State" type="text" class="form-control" style="margin-left: 33.5px" required readonly />
+                    <span asp-validation-for="State" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group mt-2">
+                    <label asp-for="ZipCode" class="control-label"></label>
+                    <input asp-for="ZipCode" type="number" class="form-control ml-2" min="10000" max="99999" style="width: 200px" required readonly />
+                    <span asp-validation-for="ZipCode" class="text-danger"></span>
+                </div>
+                <div class="form-group ml-3">
+                    <label asp-for="Country" class="control-label"></label>
+                    <input asp-for="Country" type="text" class="form-control ml-4" required readonly />
+                    <span asp-validation-for="Country" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group mt-2">
+                    <label asp-for="EdLevel" class="control-label">Education</label>
+                    <select asp-for="EdLevel" class="form-control ml-1" required>
+                        <option value="Masters">
+                            Masters
+                        </option>
+                        <option value="Bachelors">
+                            Bachelors
+                        </option>
+                        <option value="PhD">
+                            PhD
+                        </option>
+                        <option value="Associate">
+                            Associate
+                        </option>
+                    </select>
+                    <span asp-validation-for="EdLevel" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-inline">
+                <div class="form-group mt-2">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" type="email" class="form-control" style="margin-left: 30px" required readonly />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group ml-3">
+                    <label asp-for="Pwd" class="control-label">Password</label>
+                    <input asp-for="Pwd" type="text" class="form-control ml-3" required readonly />
+                    <span asp-validation-for="Pwd" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group mt-3">
+                <div style="margin-left: 150px">
+                    <input type="button" id="edit" value="Edit" class="btn btn-success" />
+                    <input type="submit" value="Update" class="btn btn-outline-success" disabled />
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<!--Script to remove read only attribute-->
+<script>
+    $('#edit').click(function () {
+        $('input[type=text]').removeAttr('readonly');
+        $('input[type=number]').removeAttr('readonly');
+        $('input[type=email]').removeAttr('readonly');
+        $('input[type=submit]').removeAttr('disabled');
+    });
+</script>

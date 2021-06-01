@@ -1,0 +1,65 @@
+﻿@model CIS665Project.Models.LoginInput
+
+@{
+    Layout = "~/Views/Shared/_Log.cshtml";
+    ViewData["Title"] = "Register";
+}
+
+
+<h1 class="text-center">Login</h1>
+<hr />
+@*If credentials are invalid*@
+
+@if (ViewData["message"] != null)
+{
+    <div class="alert alert-danger">@ViewData["message"]</div>
+}
+@if (TempData["account"] != null)
+{
+    <div class="alert alert-success">@TempData["account"] </div>
+}
+
+<div class="row">
+    <div class="mx-auto card" style="box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); width: 20rem">
+        <form asp-action="Login" class="mx-auto mt-2" method="post">
+
+            @* Store the returnURL as a hidden field*@
+
+            <input type="hidden" asp-for="ReturnURL" />
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group m-2">
+                <label asp-for="Username" class="control-label">Email</label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group m-2">
+                <label asp-for="UserPassword" class="control-label">Password</label>
+                <input asp-for="UserPassword" class="form-control" />
+                <span asp-validation-for="UserPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group m-2">
+                <label asp-for="Role" class="control-label">I am</label>
+                <select asp-for="Role" class="form-control">
+                    <option value="User">User</option>
+                    <option value="Business">Business</option>
+                </select>
+                <span asp-validation-for="Role" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="text-center">
+                    <input type="submit" value="Login" class="btn btn-warning w-50" />
+                </div>
+                <div class="form-group">
+                    <div class="form-inline mt-2">
+                        <a asp-action="URegister" asp-controller="Account" class="btn btn-outline-warning text-sm-center ml-1"
+                           value="Register" style="font-size: 13px; margin-right: 10px">User Registration</a>
+                        <a asp-action="BRegister" asp-controller="Account" class="btn btn-outline-warning text-sm-center ml-1" 
+                           value="Register" style="font-size: 13px">Business Registration</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

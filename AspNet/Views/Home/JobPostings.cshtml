@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CIS655Project.Models.Job>
+
+@{
+    ViewData["Title"] = "My Jobs";
+    Layout = "~/Views/Shared/_BLayout.cshtml";
+}
+
+@if (TempData["delete"] != null)
+{
+    <div class="alert alert-success">@TempData["delete"] </div>
+}
+@if (TempData["deletefail"] != null)
+{
+    <div class="alert alert-danger">@TempData["deletefail"] </div>
+}
+@if (TempData["App"] != null)
+{
+    <div class="alert alert-success">@TempData["App"] </div>
+}
+@if (TempData["AppError"] != null)
+{
+    <div class="alert alert-danger">@TempData["AppError"] </div>
+}
+
+@if (TempData["updateFail"] != null)
+{
+    <div class="alert alert-danger">@TempData["jobPostFail"] </div>
+}
+@if (TempData["edit"] != null)
+{
+    <div class="alert alert-success">@TempData["edit"] </div>
+}
+
+
+@if (Model.Any())
+{
+    <h1 class="text-center">My Applications</h1>
+    <div>
+        @foreach (var item in Model)
+        {
+            <div class="card mx-auto mb-3" style="width: 28rem;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+">
+                <div class="card-body">
+                    <h5 class="card-title"> @item.JobTitle</h5>
+                    <p class="card-text"> <b>PostDate: </b> @item.JobPostDate</p>
+                    <p class="card-text"><b>Location: </b>@item.Location</p>
+                    <p class="card-text"><b>Job Type: </b> @item.JobType</p>
+                    <p class="card-text"><b>Description: </b> @item.Summary</p>
+                    <a asp-action="JobDelete" asp-route-id="@item.JobId" class="btn btn-primary">Delete</a>
+                    <a asp-action="JobProfile" asp-route-id="@item.JobId" class="btn btn-primary">Edit</a>
+                </div>
+            </div>
+        }
+    </div>
+
+}
+else
+{
+    <h1 class="text-center">Nothing to Display</h1>
+    <div class="text-center mt-4">
+        <a asp-action="BIndex" class="btn btn-outline-primary text-dark">Post Jobs</a>
+    </div>
+}

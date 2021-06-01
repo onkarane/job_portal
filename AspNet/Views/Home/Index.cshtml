@@ -1,0 +1,60 @@
+﻿@model CIS665Project.Models.Search
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@if (TempData["AppError"] != null)
+{
+    <div class="alert alert-danger">@TempData["AppError"] </div>
+}
+
+<div class="text-center">
+    <h1 class="display-4 ml-5">Search Jobs</h1>
+    <form asp-action="SearchResults" method="post">
+
+        @* Store the returnURL as a hidden field*@
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-inline align-items-center mt-5">
+            <div class="form-group" style="margin-left: 180px">
+
+                <label asp-for="Category" class="control-label mr-2 font-weight-normal h5">Job Category</label>
+                <select asp-for="Category" class="form-control">
+                    <option value="0" selected>
+                        Select a Job Category
+                    </option>
+                    <option value="1">
+                        Information Technology
+                    </option>
+                    <option value="2">
+                        Data Science
+                    </option>
+                    <option value="3">
+                        Customer Support
+                    </option>
+                    <option value="4">
+                        Marketing
+                    </option>
+                    <option value="5">
+                        Sales
+                    </option>
+                    <option value="6">
+                        Business
+                    </option>
+                </select>
+            </div>
+            <div>
+                <h4 class="font-weight-bold text-muted ml-2 mr-2">OR</h4>
+            </div>
+            <div class="form-group">
+                <input asp-for="WildCard" placeholder="Search Job Title" class="form-control" style="width: 25rem" />
+            </div>
+
+        </div>
+        <input type="submit" value="Search" class="btn btn-outline-success text-dark mt-3 w-25" />
+
+    </form>
+
+</div>
